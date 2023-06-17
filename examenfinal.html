@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Operaciones</title>
+  <script>
+    function calcularOperacion() {
+      var input1 = parseInt(document.getElementById("input1").value);
+      var input2 = parseInt(document.getElementById("input2").value);
+      var input3 = parseInt(document.getElementById("input3").value);
+      var resultado = document.getElementById("resultado");
+
+      if (input1 > input3) {
+        var multiplicacion = input1 * input2 * input3;
+        resultado.innerHTML = "Multiplicación: " + multiplicacion;
+      } else if (input1 === input2) {
+        var suma = input1 + input2 + input3;
+        resultado.innerHTML = "Suma: " + suma;
+      }
+    }
+
+    function concatenarValores() {
+      var input1 = parseInt(document.getElementById("input1").value);
+      var input2 = parseInt(document.getElementById("input2").value);
+      var input3 = parseInt(document.getElementById("input3").value);
+      var resultado = document.getElementById("resultado");
+
+      var concatenacion = "";
+      for (var i = 0; i < input1 * input2; i++) {
+        concatenacion += input3 + " ";
+      }
+
+      resultado.innerHTML += "<br>Concatenación: " + concatenacion;
+    }
+  </script>
+</head>
+<body>
+  <input type="number" id="input1">
+  <input type="number" id="input2">
+  <input type="number" id="input3">
+  <br><br>
+  <button onclick="calcularOperacion()">Botón 1</button>
+  <button onclick="concatenarValores()">Botón 2</button>
+  <br><br>
+  <div id="resultado"></div>
+</body>
+</html>
